@@ -1,4 +1,4 @@
-# Team8Project1
+<!-- # Team8Project1 -->
 Our First Project Team 8
 Team Members:
   Momin Ahmad
@@ -17,7 +17,7 @@ Spencer Vigil
 Momin Amad
 Nanette Labrada
 
-Project Description - working Descriptiondone
+Project Description - working Description done
 
 Sketch of Final Product - in process
 
@@ -25,9 +25,9 @@ APIs to be Used - done
 
 Rough Breakdown of Tasks  - 
 
-Sanjan Tripathi - Javascript API
+Sanjan Tripathi - Javascript API ajax
 Spencer Vigil - Create Layout of Site 
-Momin Amad - Creating 
+Momin Amad - Creating Database using firebase 
 Nanette Labrada - CSS
 
 
