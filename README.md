@@ -120,3 +120,10 @@ Stage 5: Finish-Line
         -modal comes up saying "Enjoy your ride together!" with details of fuel cost.
         -Fuel cost is determined using the distance between source and destination and mileage of the car 
         -Fuel cost is equally distributed between the rider and driver
+  
+Rough Breakdown of Tasks  - 
+
+Sanjan Tripathi - Javascript API ajax
+Spencer Vigil - Create Layout of Site 
+Momin Amad - Creating Database using firebase 
+Nanette Labrada - CSS
