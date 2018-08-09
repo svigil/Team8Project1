@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Employee Management</title>
+    <title>Car Pool</title>
     <!-- <link rel="stylesheet" type="text/css" href="reset.css"> -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
         crossorigin="anonymous">
@@ -17,16 +17,7 @@
     <script src="https://www.gstatic.com/firebasejs/5.3.1/firebase.js"></script>
 
 </head>
-<style>
-    * {
-        box-sizing: border-box;
-    }
 
-    .sign-in-border {
-        border: 1px solid grey;
-        padding: 20px;
-    }
-</style>
 
 <body>
 
@@ -34,56 +25,104 @@
         <div class="container">
             <h1 class="display-4">Let's Car Pool!</h1>
             <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Know More</button>
         </div>
-    </div>
-    <!-- /////////////////////////////////////////////////////////////////////////// -->
-    <div class="row">
-        <div class="col-md-6 sign-in-border">
-            <h3>Sign-in</h3>
-            <hr>
-            <form>
-                <div class="form-group">
-                    <label for="exampleInputEmail1">Username</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
-                    
-                </div>
-                <div class="form-group">
-                    <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-                </div>
 
-                <button type="submit" class="btn btn-primary">Sign in</button>
-            </form>
-        </div>
-        <div class="col-md-6 sign-in-border">
-            <h3>Sign-up</h3>
-            <hr>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Name</label>
-                <input type="text" class="form-control" id="exampleInputEmail1"  placeholder="Enter name">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputEmail1">Username</label>
-                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-            </div>
-            <div class="form-group">
-                <label for="exampleInputPassword1">LinkedIn URL</label>
-                <input type="url" class="form-control" id="exampleInputPassword1" placeholder="linkedIn url">
-            </div>
-            <h5>Or</h5>
-            <div class="form-group form-check">
-                    <h3><input type="checkbox" class="form-check-input" id="exampleCheck1">
-                    <label class="form-check-label" for="exampleCheck1">Sign-up using LinkedIn</label></h3>
-            </div>
-            <button type="submit" class="btn btn-primary">Sign-up</button>
-            </form>
-        </div>
-        <!-- close row1 -->
     </div>
+    <!-- Modals -->
+    <!-- Modal-1 long opens on clicking Know More button -->
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    ...the steps go in here ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal1 close -->
+    <!-- Modal-2 opens on clicking Sign-up button -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Do you want to create a new account?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <!-- <div class="modal-body">
+                                    ...
+                                </div> -->
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">No</button>
+                    <button type="button" class="btn btn-primary">Yes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal-2 close -->
+    <!-- /////////////////////////////////////////////////////////////////////////// -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Our Inspiration
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Lorem ipsum
+                                dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Lorem ipsum dolor
+                                sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Lorem ipsum dolor sit
+                                amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+
+                        </blockquote>
+                    </div>
+                </div>
+                <!-- close col-1-inspiration -->
+            </div>
+            <div class="col-md-6 ">
+                <div class="card">
+                    <div class="card-header">
+                        Register/Sign-in
+                    </div>
+                    <div class="card-body">
+                        <blockquote class="blockquote mb-0">
+                            <form>
+                                <div class="form-group">
+                                    <label for="username">Username</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter username">
+
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                </div>
+
+                                <button type="button" class="btn btn-primary" id="sign-up" data-toggle="modal" data-target="#exampleModal">Sign in</button>
+                        </blockquote>
+                    </div>
+                </div>
+                <!-- close col-2-sign-in -->
+            </div>
+            <!-- close row1 -->
+        </div>
+        <!-- close container -->
+    </div>
+    <script>
+
+    </script>
 </body>
 
 </html>
