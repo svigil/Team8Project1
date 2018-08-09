@@ -50,6 +50,7 @@ var config = {
     user = {
       name: $("#exampleInputEmail1").val().trim(),
       source: $("#exampleInputPassword1").val().trim(), 
+      option,
       // location: ,
       // type:,
       
@@ -82,6 +83,7 @@ var config = {
     database.ref().on("child_added", function(snapshot){
         console.log(snapshot.val().user.name);
         console.log(snapshot.val().user.source);
+        console.log(snapshot.val().user.option);
     })
 
 
