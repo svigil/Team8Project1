@@ -25,7 +25,7 @@
     <div class="jumbotron jumbotron-fluid">
         <div class="container">
             <h1 class="display-4">Let's Car Pool!</h1>
-            <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>
+            <p class="lead">Connecting everyone to car pool.</p>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">Know More</button>
         </div>
 
@@ -83,10 +83,7 @@
                     </div>
                     <div class="card-body">
                         <blockquote class="blockquote mb-0">
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Lorem ipsum
-                                dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Lorem ipsum dolor
-                                sit amet, consectetur adipiscing elit. Integer posuere erat a ante.Lorem ipsum dolor sit
-                                amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                            <p>Our mission is to connect drivers and riders together to create a more efficient process for the working public to commute to their place of business. Our goal is to both save our users money but also alleviate traffic on the roads.</p>
 
                         </blockquote>
                     </div>
@@ -96,7 +93,7 @@
             <div class="col-md-6 ">
                 <div class="card">
                     <div class="card-header">
-                        Register/Sign-in
+                        Get Started!
                     </div>
                     <div class="card-body">
                         <blockquote class="blockquote mb-0">
@@ -113,7 +110,17 @@
                                             </div>      
                                           </div>
                                           <div class="col-md-4 mb-3">
-                                            <label for="validationCustom02">Location: </label>
+                                            <label for="validationCustom02">Source: </label>
+                                            <input type="text" class="form-control" id="validationCustom02" placeholder="Location" required>
+                                            <div class="valid-feedback">
+                                              Looks good!
+                                            </div>
+                                            <div class="invalid-feedback">
+                                                Missing something!
+                                            </div>          
+                                          </div>
+                                          <div class="col-md-4 mb-3">
+                                            <label for="validationCustom02">Destination: </label>
                                             <input type="text" class="form-control" id="validationCustom02" placeholder="Location" required>
                                             <div class="valid-feedback">
                                               Looks good!
@@ -123,8 +130,19 @@
                                             </div>          
                                           </div>
                                         </div>
+                                        
+                                        
                                         <button class="btn btn-primary" type="submit">Submit form</button>
                                       </form>
+                                      <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                                        <label class="btn btn-secondary active">
+                                          <input type="radio" name="options" id="option-driver" autocomplete="off" checked> Driver
+                                        </label>
+                                        <label class="btn btn-secondary">
+                                          <input type="radio" name="options" id="option-rider" autocomplete="off"> Rider
+                                        </label>
+                                        
+                                    </div>
                         </blockquote>
                     </div>
                 </div>
