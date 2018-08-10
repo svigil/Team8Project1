@@ -13,19 +13,26 @@ var config = {
   var option = false;
 
   $("#option-rider").on('click', function(){
+    alert("works");
     if (option === true) {
-      option === false;
+      option = false;
     } else {
       return false;
     }
   })
   $("#option-driver").on('click', function(){
+    alert("works");
     if (option === false) {
-      option === true;
+      option = true;
     } else {
       return true;
     }
   })
+ 
+
+
+  
+  
 
   // (function() {
   //   'use strict';
@@ -48,13 +55,16 @@ var config = {
   $("#sign-up").on('click', function(event){
     event.preventDefault();
     user = {
-      name: $("#exampleInputEmail1").val().trim(),
-      source: $("#exampleInputPassword1").val().trim(), 
-      option,
+      name: $("#validationCustom01").val().trim(),
+      source: $("#validationCustom02").val().trim(), 
+      destination: $("#validationCustom03").val().trim(),
+      userOption: option,
       // location: ,
       // type:,
       
     }
+    
+    console.log(user);
     if (user.name == '' || user.source == ''){
 
       alert("it works");
@@ -83,7 +93,8 @@ var config = {
     database.ref().on("child_added", function(snapshot){
         console.log(snapshot.val().user.name);
         console.log(snapshot.val().user.source);
-        console.log(snapshot.val().user.option);
+        console.log(snapshot.val().user.destination);
+        console.log(snapshot.val().user.userOption);
     })
 
 
