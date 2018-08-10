@@ -6,6 +6,7 @@ var config = {
     storageBucket: "carpool-f4afb.appspot.com",
     messagingSenderId: "617867932176"
   };
+  
   firebase.initializeApp(config);
 
   var database = firebase.database();
