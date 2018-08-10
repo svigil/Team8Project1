@@ -1,0 +1,26 @@
+body{
+    background-color: aliceblue;
+}
+.media{
+    margin-left: 25%;
+    margin-top: 5%;
+    border-style: solid;
+    border-radius: 8px;
+    padding: 10px;
+    margin-right: 25%;
+    background-color: white;
+}
+.map-div{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 10%;
+    padding: 20px;
+    border-style: solid;
+    border-radius: 8px;
+}
+.card{
+    border-color: black;
+}
+.list-group-item{
+    border-color: black;
+}
