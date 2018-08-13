@@ -14,6 +14,7 @@ var name, source, destination, username, userStatus;
 var drivingStatus = true;
 var usernameArray = [];
 var flag = true;
+var temp, humidity, wind, contentString, infowindow;
 database.ref().on("child_added", function (snap) {
     usernameArray.push(snap.val().username);
 });
@@ -95,11 +96,33 @@ function pushToFirebase() {
     });
 
 }
+database.ref().on("child_added", function(snapshot){
+        if(snapshot.val().username === username){
+            var locationlat = snapshot.val().destinationLatitude;
+            var locationlng = snapshot.val().destinationLongitude;
+            var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat="+locationlat+"&lon="+locationlng+"&appid=166a433c57516f51dfab1f7edaed8413";
+            $.ajax({
+                url: queryURL,
+                method: "GET"
+            }).then(function(response){
+                console.log(response.main.temp);
+                console.log(response.main.humidity);
+                console.log(response.wind.speed);
+                temp = response.main.temp;
+                humidity = response.main.humidity;
+                wind = response.wind.speed;
+                contentString='<div><h5>Destination Loaction:</h5><p>Temperature: '+temp+'</p><p>Humidity: '+humidity+'<p>Wind Speed: '+wind+'</p></div>';
+                infowindow = new google.maps.InfoWindow({
+                    content: contentString
+                  });
+            });
+        }
+    })
 
 database.ref().on("child_added", function (snapshot) {
     console.log(snapshot.val().username);
     if (snapshot.val().username === username) {
-        var marker = new google.maps.Marker({
+        var sourcemarker = new google.maps.Marker({
             position: {
                 lat: snapshot.val().sourceLatitude,
                 lng: snapshot.val().sourceLongitude
@@ -107,9 +130,17 @@ database.ref().on("child_added", function (snapshot) {
             title: "You are here",
             map: map
         });
-        marker.addListener("click", function(){
-            markerClick();
-        });
+        var destinationmarker = new google.maps.Marker({
+            position: {
+                lat: snapshot.val().destinationLatitude,
+                lng: snapshot.val().destinationLongitude
+            },
+            title: "You are here",
+            map: map
+        });   
+        destinationmarker.addListener('click', function() {
+            infowindow.open(map, destinationmarker);
+          });
     }
     else{
         var icon = {
@@ -130,24 +161,26 @@ database.ref().on("child_added", function (snapshot) {
     }
 });         //close child_added snapshot()
 
-function markerClick(){
-database.ref().on("child_added", function(snapshot){
-    if(snapshot.val().username === username){
-        var locationlat = snapshot.val().destinationLatitude;
-        var locationlng = snapshot.val().destinationLongitude;
-        var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat="+locationlat+"&lon="+locationlng+"&appid=166a433c57516f51dfab1f7edaed8413";
-        $.ajax({
-            url: queryURL,
-            method: "GET"
-        }).then(function(response){
-            console.log(response.main.temp);
-            console.log(response.main.humidity);
-            console.log(response.wind.speed);
-            
-        });
-    }
-})
-}
+
+// database.ref().on("child_added", function(snapshot){
+//     if(snapshot.val().username === username){
+//         var locationlat = snapshot.val().destinationLatitude;
+//         var locationlng = snapshot.val().destinationLongitude;
+//         var queryURL = "https://api.openweathermap.org/data/2.5/weather?lat="+locationlat+"&lon="+locationlng+"&appid=166a433c57516f51dfab1f7edaed8413";
+//         $.ajax({
+//             url: queryURL,
+//             method: "GET"
+//         }).then(function(response){
+//             console.log(response.main.temp);
+//             console.log(response.main.humidity);
+//             console.log(response.wind.speed);
+//             temp = response.main.temp;
+//             humidity = response.main.humidity;
+//             wind = response.wind.speed;
+//         });
+//     }
+// })
+
 
 // }
 
