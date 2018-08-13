@@ -1,16 +1,20 @@
 *{
 
     font-family: 'Antic', sans-serif;
+    /* background: lightgreen; */
+
 }
 
 
-.jumbotron{
+#head{
 
     /* font-family: 'Neucha', cursive; */
-    /* font-family: 'Cabin Sketch', cursive; */
+    font-family: 'Cabin Sketch', cursive;
     background: lightgreen;
     border-radius: 25px;
+    border-color: lightgreen;
     padding: 20px;
+    
 }
 
 body, html{
@@ -26,18 +30,76 @@ body, html{
 
 #carpul{
     width: 99%;
-    /* border-radius: 25px; */
-    /* border: 2px solid #73AD21;
-    padding: 20px; 
-    width: 200px;
-    height: 150px;  */
     
-    /* padding: 0 10% 0 0; */
 }
 
 #side{
     background: lightgreen;
     border-radius: 25px;
     padding: 20px;
+
+}
+
+@media screen and (max-width: 980px) {
+    body {
+        background-size: 150%;
+        font-size: 100%;
+        
+    }
+
+    .container {
+        background-size: 150%;
+        font-size: 100%;
+        
+    }
+    /* #head{
+
+        background-size: 150%;
+        font-size: 50%;
+        
+    } */
+    .display-4{
+        background-size: 150%;
+        font-size: 150%;
+        font-weight: bold;
+
+    }
+    .lead{
+        background-size: 150%;
+        font-size: 150%;
+
+    }
+
+}
+
+@media screen and (max-width: 640px) {
+    body {
+        background-size: 400%;
+        font-size: 100%;
+    }
+
+    .container {
+        background-size: 150%;
+        font-size: 100%;
+        
+    }
+
+    /* #head{
+
+        background-size: 150%;
+        font-size: 50%;
+        
+    } */
+    .display-4{
+        background-size: 150%;
+        font-size: 150%;
+        font-weight: bold;
+
+    }
+    .lead{
+        background-size: 150%;
+        font-size: 150%;
+
+    }
 
 }
