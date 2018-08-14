@@ -121,6 +121,7 @@ $("#go").on('click', function (event) {
                         $.get(proxyUrl + targetUrl, function (data) {
                             console.log(data);
                             var distance = data.rows[0].elements[0].distance.text;
+                            var distancemet = data.rows[0].elements[0].distance.value;
                             var userdestination = snap.val().destination;
                             var nameofuser = snap.val().name;
                             var usercontact = snap.val().contact;
@@ -134,7 +135,8 @@ $("#go").on('click', function (event) {
                             var tddestination = $("<td>");
                             tddestination.text(userdestination);
                             tr.append(tdname).append(tdcontact).append(tddistance).append(tddestination);
-                            $("#usertablebody").append(tr);
+                            if(distancemet <= 5000){
+                            $("#usertablebody").append(tr);}
                             });
                         var markerContentString = "<div><h5>User Driving Status: " + snap.val().userDrivingStatus + "</h5><p>Username: " + snap.val().username + "</p></div>";
                         var markerinfowindow = new google.maps.InfoWindow({
