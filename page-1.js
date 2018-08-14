@@ -64,6 +64,8 @@ $("#go").on('click', function (event) {
             }).then(function (response) {
                 destinationLat = response.results[0].geometry.location.lat;
                 destinationLong = response.results[0].geometry.location.lng;
+                console.log(destinationLat);
+                console.log(destinationLong);
                 pushToFirebase();
                 
             });     //close nested ajax call for destination
