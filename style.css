@@ -8,6 +8,14 @@
 
 
 
+    /* font-family: 'Neucha', cursive;
+    /* font-family: 'Cabin Sketch', cursive; */
+    /* background: lightgreen;
+    border-radius: 25px;
+    padding: 20px;
+    text-align: center; */
+
+/* } */ */
 
 body, html{
     width: 100%;
@@ -30,7 +38,15 @@ body, html{
     background: lightgreen;
     border-radius: 25px;
     padding: 20px;
+    margin-top: 10px;
 
+}
+.modal-body{
+    background-image: url(https://slack-imgs.com/?c=1&url=https%3A%2F%2Fmedia3.giphy.com%2Fmedia%2FxT5LMMwckvwmv09w0E%2Fgiphy.gif);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    color: white;
+    
 }
 
 #Head{
@@ -48,13 +64,12 @@ body, html{
 #jumbo{
     
     background-image: url("Images/citylarge.gif") ;
-    color: white;
-    height: 180%;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    margin: 10px 0 10px 0;
-    padding: 10px 0 10px 0;
     border-radius: 8px;
+    color: white;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    margin: 10px 0 10px 0;
+    /* padding: 10px 0 10px 0; */
     /* background-size: 100%; */
     /* height: 80%; */
     /* background: lightgreen; */
@@ -63,32 +78,21 @@ body, html{
 }
 
 #title{
-
     margin-bottom: 60px;
 }
 
 #icon{
-    background: url('Images/Use.jpg');
     background-size: 100% 100%;
     color: black;
+    margin-left: 80px;
 
 }
 
-.modal-body{
-    background-image: url(https://slack-imgs.com/?c=1&url=https%3A%2F%2Fmedia3.giphy.com%2Fmedia%2FxT5LMMwckvwmv09w0E%2Fgiphy.gif);
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    color: white;
-
+#words-dude{
+    clear: both;
+    line-height: 2px;
+    margin-bottom: 80px;
 }
-
-#center{
-
-    padding-right: 20%;
-}
-
-
-
 
 @media screen and (max-width: 980px) {
     body {
@@ -103,7 +107,6 @@ body, html{
         
     }
     /* #head{
-
         background-size: 150%;
         font-size: 50%;
         
@@ -135,7 +138,6 @@ body, html{
     }
 
     /* #head{
-
         background-size: 150%;
         font-size: 50%;
         
