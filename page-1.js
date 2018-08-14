@@ -44,6 +44,7 @@ var name, contact, source, destination, username, userStatus;
 var drivingStatus = true;
 var usernameArray = [];
 var flag = true;
+var check=true;
 var temp, humidity, wind, contentString, infowindow;
 var lat=null;
 var lng=null;
@@ -79,11 +80,16 @@ $("#go").on('click', function (event) {
     //check if username is unique depending on the values in usernameArray
     for (var i = 0; i < usernameArray.length; i++) {
         
-        if ($("#username").val() === usernameArray[i] || ($("#username").val()).length < 4) {
+        if (($("#username").val() === usernameArray[i]) || (($("#username").val()).length < 4)) {
             flag = false;
         }
     }
-    if (flag === true) {
+    console.log($("#name").val());
+    if(($("#name").val().trim() === null)||($("#name").val().trim() === "") || ($("#username").val().trim() === "")|| ($("#username").val().trim() === null) || ($("#contact").val().trim() === "")||($("#contact").val().trim() === null) || ($("#sourceLocation").val() === null)||($("#sourceLocation").val() === "") || ($("#destinationLocation").val() === null)||($("#destinationLocation").val() === "") ){
+        
+        check = false;
+    }
+    if (flag === true && check === true) {
         // read data from the form
         name = $("#name").val().trim();
         contact = $("#contact").val().trim();
