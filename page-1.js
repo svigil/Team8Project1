@@ -44,6 +44,7 @@ var name, contact, source, destination, username, userStatus;
 var drivingStatus = true;
 var usernameArray = [];
 var flag = true;
+var check=true;
 var temp, humidity, wind, contentString, infowindow;
 var lat=null;
 var lng=null;
@@ -79,11 +80,16 @@ $("#go").on('click', function (event) {
     //check if username is unique depending on the values in usernameArray
     for (var i = 0; i < usernameArray.length; i++) {
         
-        if ($("#username").val() === usernameArray[i] || ($("#username").val()).length < 4) {
+        if (($("#username").val() === usernameArray[i]) || (($("#username").val()).length < 4)) {
             flag = false;
         }
     }
-    if (flag === true) {
+    console.log($("#name").val());
+    if(($("#name").val().trim() === null)||($("#name").val().trim() === "") || ($("#username").val().trim() === "")|| ($("#username").val().trim() === null) || ($("#contact").val().trim() === "")||($("#contact").val().trim() === null) || ($("#sourceLocation").val() === null)||($("#sourceLocation").val() === "") || ($("#destinationLocation").val() === null)||($("#destinationLocation").val() === "") ){
+        
+        check = false;
+    }
+    if (flag === true && check === true) {
         // read data from the form
         name = $("#name").val().trim();
         contact = $("#contact").val().trim();
@@ -121,6 +127,7 @@ $("#go").on('click', function (event) {
                         $.get(proxyUrl + targetUrl, function (data) {
                             console.log(data);
                             var distance = data.rows[0].elements[0].distance.text;
+                            var distancemet = data.rows[0].elements[0].distance.value;
                             var userdestination = snap.val().destination;
                             var nameofuser = snap.val().name;
                             var usercontact = snap.val().contact;
@@ -134,7 +141,8 @@ $("#go").on('click', function (event) {
                             var tddestination = $("<td>");
                             tddestination.text(userdestination);
                             tr.append(tdname).append(tdcontact).append(tddistance).append(tddestination);
-                            $("#usertablebody").append(tr);
+                            if(distancemet <= 5000){
+                            $("#usertablebody").append(tr);}
                             });
                         var markerContentString = "<div><h5>User Driving Status: " + snap.val().userDrivingStatus + "</h5><p>Username: " + snap.val().username + "</p></div>";
                         var markerinfowindow = new google.maps.InfoWindow({
