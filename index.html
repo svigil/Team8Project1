@@ -35,16 +35,13 @@
                 <div class="col-md-4 "> 
                         
                 </div>
-                <div class="col-md-6 ">
-                    <div class="container" >
+                <div class="col-md-6">
+                    <div class="container" id="words-dude">
                         <h1 class="display-4">Let's Car Pül!</h1>
                         <p class="lead">Connecting everyone to car pool.</p>
                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong" id = "icon">Know More</button>
                     </div>
                 </div>
-                <!-- <div class="col-md-4 "> 
-                    <img src="" alt="CarPul" id = "carpul">
-                </div> -->
             </div>
         </div>
     </div>
@@ -73,13 +70,44 @@
         </div>
     </div>
     <!-- modal1 close -->
-   
-    <!-- /////////////////////////////////////////////////////////////////////////// -->
+    <!-- modal2 -->
+    <div class="modal" id="usernameModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title">Username Taken!</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <p>This username has been taken. Refresh the page and try with a new one.</p>
+            </div>
+            
+        </div>
+        </div>
+    </div>
+   <!-- modal2 close -->    
+   <!-- /////////////////////////////////////////////////////////////////////////// -->
     <div class="container" id = "side">
         <div class="row">
-           
+           <!-- table for info -->
+           <table class="table table-dark" id = "usertable">
+                <thead>
+                  <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Contact</th>
+                    <th scope="col">Miles Away</th>
+                    <th scope="col">User Destination</th>
+                  </tr>
+                </thead>
+                <tbody id="usertablebody">
+                </tbody>
+              </table>
+            <!-- close table -->
             <div class="col-md-12 ">
-                <form>
+            
+                <form id="userform">
                     <div class="form-group">
                       <label for="name">Name:</label>
                       <input type="text" class="form-control" id="name" placeholder="Enter name">
@@ -90,6 +118,11 @@
                             <input type="text" class="form-control" id="username" placeholder="Enter Username">
                     </div>
                     <div class="form-group">
+                            <label for="contact">Contact:</label>
+                            <input type="number" class="form-control" id="contact" placeholder="Enter Mobile Number">
+                    </div>
+
+                    <div class="form-group">
                       <label for="sourceLocation">Source Location:</label>
                       <input type="text" class="form-control" id="sourceLocation" placeholder="Where am I?">
                     </div>
@@ -98,27 +131,27 @@
                         <input type="text" class="form-control" id="destinationLocation" placeholder="Where do I wanna go?">
                     </div>
 
-                    <div class="form-row">
-                            <!-- <div class="col-md-6 mb-3"></div> -->
-                            <div class="col-md-4 mb-3">
-                                <div class="btn-group btn-group-toggle" data-toggle="buttons">
-                                    <label class="btn btn-secondary active">
-                                        <input type="radio" name="options" id="option-driver" autocomplete="off" checked> Driver
-                                    </label>
-                                    <label class="btn btn-secondary">
-                                        <input type="radio" name="options" id="option-rider" autocomplete="off"> Rider
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="driver" value="option1" checked>
+                        <label class="form-check-label" for="exampleRadios1">
+                          Driver
+                        </label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="rider" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                          Rider
+                        </label>
+                      </div>
+                      
                                 <div class="form-row">
                                     <!-- <div class="col-md-6 mb-3"></div> -->
                                     <div class="col-md-4 mb-3" >
-                                        <button type = "button" id = "go" href = "rider.html" class = "btn btn-primary">Go</button>
+                                        <button type = "submit" id = "go" href = "rider.html" class = "btn btn-primary">Go</button>
                                         <!-- href = "rider.html"  -->
                                     </div>
-                                </div>   
-                  </form>
+                                </div>
+                      </form>
                            
                 <!-- close col-1-sign-in -->
             </div>
