@@ -41,7 +41,7 @@ var connectedRef = database.ref(".info/connected");
 var map;
 var sourceLat, sourceLong, destinationLat, destinationLong;
 var name, contact, source, destination, username, userStatus;
-var drivingStatus = "driver";
+var drivingStatus = true;
 var usernameArray = [];
 var flag = true;
 var check=true;
@@ -56,12 +56,12 @@ var lng=null;
 
 $("#rider").on('click', function () {
     
-    drivingStatus = "rider";
+    drivingStatus = false;
     
 })
 $("#driver").on('click', function () {
 
-    drivingStatus = "driver";
+    drivingStatus = true;
 });
 
 //for each child added push their username in the usernameArray
@@ -146,7 +146,11 @@ $("#go").on('click', function (event) {
                             tr.append(tdname).append(tdcontact).append(tddrivingstatus).append(tddistance).append(tddestination);
                             if(distancemet <= 5000){
                             $("#usertablebody").append(tr);}
+                            else{
+                                $("#usertablebody").append("No user found");   
+                            }
                             });
+                            
                         var markerContentString = "<div><h5>User Driving Status: " + snap.val().userDrivingStatus + "</h5><p>Username: " + snap.val().username + "</p></div>";
                         var markerinfowindow = new google.maps.InfoWindow({
                             content: markerContentString
