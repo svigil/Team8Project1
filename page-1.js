@@ -146,21 +146,21 @@ $("#go").on('click', function (event) {
                             tr.append(tdname).append(tdcontact).append(tddrivingstatus).append(tddistance).append(tddestination);
                             if(distancemet <= 5000){
                             $("#usertablebody").append(tr);}
-                            else{
-                                var trelse=$("<tr>");
-                                var td1 = $("<td>");
-                                var td2 = $("<td>");
-                                var td3 = $("<td>");
-                                var td4 = $("<td>");
-                                var td5 = $("<td>");
-                                td1.text("No user found");
-                                td2.text("-");
-                                td3.text("-");
-                                td4.text("-");
-                                td5.text("-");
-                                trelse.append(td1).append(td2).append(td3).append(td4).append(td5);
-                                $("#usertablebody").append(trelse);   
-                            }
+                            // else{
+                            //     var trelse=$("<tr>");
+                            //     var td1 = $("<td>");
+                            //     var td2 = $("<td>");
+                            //     var td3 = $("<td>");
+                            //     var td4 = $("<td>");
+                            //     var td5 = $("<td>");
+                            //     td1.text("No user found");
+                            //     td2.text("-");
+                            //     td3.text("-");
+                            //     td4.text("-");
+                            //     td5.text("-");
+                            //     trelse.append(td1).append(td2).append(td3).append(td4).append(td5);
+                            //     $("#usertablebody").append(trelse);   
+                            // }
                             });
                             
                         var markerContentString = "<div><h5>User Driving Status: " + snap.val().userDrivingStatus + "</h5><p>Username: " + snap.val().username + "</p></div>";
