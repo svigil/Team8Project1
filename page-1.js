@@ -233,6 +233,12 @@ database.ref("connectedRef").on("child_added", function (snapshot) {
                 content: contentString
             });     //close infowindow
         });   //close ajax
+        var icon = {
+            url: "green.png", // url
+            scaledSize: new google.maps.Size(50, 50), // scaled size
+            origin: new google.maps.Point(0, 0), // origin
+            anchor: new google.maps.Point(0, 0) // anchor
+        };
         var sourcemarker = new google.maps.Marker({
             position: {
                 lat: snapshot.val().sourceLatitude,
@@ -247,6 +253,7 @@ database.ref("connectedRef").on("child_added", function (snapshot) {
                 lat: snapshot.val().destinationLatitude,
                 lng: snapshot.val().destinationLongitude
             },
+            icon: icon,
             title: "This is your destination",
             map: map
         });
