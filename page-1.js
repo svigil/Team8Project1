@@ -41,7 +41,7 @@ var connectedRef = database.ref(".info/connected");
 var map;
 var sourceLat, sourceLong, destinationLat, destinationLong;
 var name, contact, source, destination, username, userStatus;
-var drivingStatus = true;
+var drivingStatus = "driver";
 var usernameArray = [];
 var flag = true;
 var check=true;
@@ -56,12 +56,12 @@ var lng=null;
 
 $("#rider").on('click', function () {
     
-    drivingStatus = false;
+    drivingStatus = "rider";
     
 })
 $("#driver").on('click', function () {
 
-    drivingStatus = true;
+    drivingStatus = "driver";
 });
 
 //for each child added push their username in the usernameArray
@@ -131,6 +131,7 @@ $("#go").on('click', function (event) {
                             var userdestination = snap.val().destination;
                             var nameofuser = snap.val().name;
                             var usercontact = snap.val().contact;
+                            var isUserDriving = snap.val().userDrivingStatus;
                             var tr = $("<tr>");
                             var tdname = $("<td>");
                             tdname.text(nameofuser);
@@ -140,7 +141,9 @@ $("#go").on('click', function (event) {
                             tddistance.text(distance);
                             var tddestination = $("<td>");
                             tddestination.text(userdestination);
-                            tr.append(tdname).append(tdcontact).append(tddistance).append(tddestination);
+                            var tddrivingstatus = $("<td>");
+                            tddrivingstatus.text(isUserDriving);
+                            tr.append(tdname).append(tdcontact).append(tddrivingstatus).append(tddistance).append(tddestination);
                             if(distancemet <= 5000){
                             $("#usertablebody").append(tr);}
                             });
@@ -160,7 +163,7 @@ $("#go").on('click', function (event) {
                                 lng: lng
                             },
                             icon: icon,
-                            title: "i am a friend",
+                            title: "I am a friend",
                             map: map
                         });
                         marker.addListener('click', function () {
@@ -228,7 +231,7 @@ database.ref("connectedRef").on("child_added", function (snapshot) {
             temp = response.main.temp;
             humidity = response.main.humidity;
             wind = response.wind.speed;
-            contentString = '<div><h5>Destination Loaction:</h5><p>Temperature: ' + temp + '</p><p>Humidity: ' + humidity + '<p>Wind Speed: ' + wind + '</p></div>';
+            contentString = '<div><h5>Destination Location:</h5><p>Temperature: ' + temp + '</p><p>Humidity: ' + humidity + '<p>Wind Speed: ' + wind + '</p></div>';
             infowindow = new google.maps.InfoWindow({
                 content: contentString
             });     //close infowindow
