@@ -147,7 +147,19 @@ $("#go").on('click', function (event) {
                             if(distancemet <= 5000){
                             $("#usertablebody").append(tr);}
                             else{
-                                $("#usertablebody").append("No user found");   
+                                var trelse=$("<tr>");
+                                var td1 = $("<td>");
+                                var td2 = $("<td>");
+                                var td3 = $("<td>");
+                                var td4 = $("<td>");
+                                var td5 = $("<td>");
+                                td1.text("No user found");
+                                td2.text("-");
+                                td3.text("-");
+                                td4.text("-");
+                                td5.text("-");
+                                trelse.append(td1).append(td2).append(td3).append(td4).append(td5);
+                                $("#usertablebody").append(trelse);   
                             }
                             });
                             
