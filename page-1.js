@@ -173,11 +173,20 @@ $("#go").on('click', function (event) {
             });     //close nested ajax call for destination
         });     //close ajax call
     }       //close if flag=true
-    else {
+    else if(flag === false && check === true) {
         // $(".form-control").val('');
         $('#usernameModal').modal({
             backdrop: "static"
         });
+        $(".form-control").val('');
+        
+    }
+    
+    else if(check === false){
+        $("#fieldsEmptyModal").modal({
+            backdrop: "static"
+        });
+        $(".form-control").val('');
         
     }
     // //     // $(".form-control").val('');
